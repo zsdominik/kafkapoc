@@ -46,4 +46,9 @@ public class KafkaConsumerConfig {
         factory.setConsumerFactory(createConsumerFactory(groupId));
         return factory;
     }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
+        return kafkaListenerContainerFactory("group1");
+    }
 }
